@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>END_POINT_Get_SObject_Records_From_ORG_A</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>END POINT - Get SObject Records From ORG A</shortDescription>
+        <value>callout:Adobe_Test_ORG_B/services/apexrest/FetchSObjectRecordsFromORGA?</value>
+    </labels>
+    <labels>
+        <fullName>Query_Accounts</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Query Accounts</shortDescription>
+        <value>SELECT+Id,+Name,+Fax,+AccountNumber,+Type,+BillingCity+FROM+Account</value>
+    </labels>
+</CustomLabels>

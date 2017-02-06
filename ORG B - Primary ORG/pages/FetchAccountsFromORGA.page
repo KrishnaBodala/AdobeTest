@@ -1,0 +1,51 @@
+<!--
+    1 - Visualforce Extension to display matching Accounts from ORG A
+    2 - Uses Pagination via Standard Set Constroller
+    3 - Though it is possible to add a form to create a new account, it is rather a best practise to redirect to
+        origin account creation page so we can better handle record type selection and choosing the fields as per record type.
+-->
+<apex:page standardController="Account" extensions="FetchAccountsFromORGAExtension" showHeader="false" sidebar="false">
+    <apex:sectionHeader title="Accounts from Adobe ORG A"/>
+
+    <apex:form >
+
+        <apex:pageMEssages id="msg" />
+
+        <apex:pageblock id="pbId">
+            <apex:pageblockTable value="{!accountsListToLoop}" var="account">
+                <apex:column value="{!account.Name}"/>
+                <apex:column value="{!account.AccountNumber}"/>
+                <apex:column value="{!account.Fax}"/>
+                <apex:column value="{!account.Type}"/>
+                <apex:column value="{!account.BillingCity}"/>
+            </apex:pageblockTable>
+
+            <apex:pageblockButtons location="bottom">
+                <apex:commandButton reRender="pbId" value="First" action="{!setCon.first}" 
+                                    disabled="{!!setCon.hasPrevious}" title="First Page"/> 
+  
+                <apex:commandButton reRender="pbId" value="Previous" action="{!setCon.previous}" 
+                                    disabled="{!!setCon.hasPrevious}" title="Previous Page"/> 
+  
+                <apex:commandButton reRender="pbId" value="Next" action="{!setCon.next}" 
+                                    disabled="{!!setCon.hasNext}" title="Next Page"/> 
+  
+                <apex:commandButton reRender="pbId" value="Last" action="{!setCon.last}" 
+                                    disabled="{!!setCon.hasNext}" title="Last Page"/> 
+  
+                &nbsp;&nbsp;&nbsp;
+                <apex:outputText >{!(setCon.pageNumber * 10)+1-10}-{!IF((setCon.pageNumber * 10)>noOfRecords, noOfRecords,
+                     (setCon.pageNumber * 10))} of {!noOfRecords}
+                </apex:outputText>
+           </apex:pageblockButtons>
+
+          <br/><br/><br/> 
+
+          <apex:outputLink value="{!URLFOR($Action.Account.New)}" target="_blank">
+              Create New Account
+          </apex:outPutLink>
+             
+        </apex:pageblock>
+    
+    </apex:form>
+</apex:page>

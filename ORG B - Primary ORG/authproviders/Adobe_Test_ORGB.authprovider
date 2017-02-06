@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authorizeUrl>https://adobetestorga-dev-ed.my.salesforce.com/services/oauth2/authorize</authorizeUrl>
+    <consumerKey>3MVG9szVa2RxsqBY1zbiShjxR326VHACm5_o1UKhvKFNh6mo112DMgkOMUIfouOd1oB8wz4NYKakHFGjTk.CC</consumerKey>
+    <consumerSecret>sbtGpWo2DRfFyBpAJTirvjKDDPT3CTAE</consumerSecret>
+    <executionUser>adobeexam@orgb.com</executionUser>
+    <friendlyName>Adobe Test ORGB</friendlyName>
+    <includeOrgIdInIdentifier>true</includeOrgIdInIdentifier>
+    <providerType>Salesforce</providerType>
+    <registrationHandler>AutocreatedRegHandler1432826053915</registrationHandler>
+    <sendAccessTokenInHeader>false</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <tokenUrl>https://adobetestorga-dev-ed.my.salesforce.com/services/oauth2/token</tokenUrl>
+</AuthProvider>
